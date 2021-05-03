@@ -1,0 +1,55 @@
+body{
+	background-color: rgba(255,255,255,0.7);
+	font-family: American Typewriter, serif;
+	text-align:center;
+	
+}
+#container{
+	width: 100%;
+}
+
+.deo{
+	
+	float: left;
+	text-align: center;
+	/*border: 1px solid black;*/
+	margin-top: 150px;
+	padding-top: 150px;
+	width: 50%;
+	
+}
+
+.dugme{
+	background-color: rgb(164, 158, 179);
+	border-radius: 5px;
+	color: white;
+	border-style: none;
+	padding: 10px; 
+	cursor: pointer;
+}
+
+#header{
+	margin: auto;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+	padding:10px;
+	margin-top: 10px;
+	color: black;
+	height: 50px;
+	
+}
+
+.headeElement{
+	
+	text-align: center;
+	font-weight: bold;
+}
+
+#slika{
+	width:100%;
+	height:100%;
+	top:0px;
+	position:fixed;
+	z-index:-1;
+	left: 0px;
+}

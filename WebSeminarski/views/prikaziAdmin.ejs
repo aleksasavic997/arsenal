@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igraci</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/lirepdrcss.css" />
+
+</head>
+
+<body>
+    <img src="/images/Pozadina.jpg" id="slika">
+
+    <div class="divv" style="padding-top: 12px;">
+
+        <ul>
+            <form method="POST" action="\adminPregled">
+                <li><input type="submit" value="Vrati se na listu igraca" class="selektovano"></li>
+            </form>
+            <form method="POST" action="\vratiSe">
+                <li style="float: right;margin-right: 20px;"><input type="submit" value="ODJAVI SE"></li>
+            </form>
+        </ul>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="divv" style="margin-bottom: 10px;">
+
+        <% if(igraci !="" ){ for (item of igraci) { %>
+            <h1>
+                <%=item.Ime%>
+
+            </h1>
+            
+
+
+                    <div style=' text-align: justify; margin: 50px;'>
+                        <h2>Detalji o igracu</h2><br>
+                        <b>
+                            <%=item.Detalji%>
+                        </b>
+                    </div>
+
+
+            
+
+
+                    <% } }%>
+
+
+    </div>
+   
+
+</body>
+
+</html>

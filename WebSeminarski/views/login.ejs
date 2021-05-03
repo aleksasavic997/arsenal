@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/logincss.css"/>
+</head>
+
+<body>
+    <img src="/images/Pozadina.jpg" id="slika">
+    
+    
+
+        <div class="deo" style='	height: 250px;' >
+            <h1 style="color:white">Prijava</h1>
+            <br>
+            <form action="\login" method="POST">
+                <input style="width: 300px; height: 35px;" type="text" name="username" placeholder="Korisnicko ime" required="required"><br><br>
+                <input style="width: 300px; height: 35px;" type="password" name="lozinka" placeholder="Lozinka" required="required"><br><br><br>
+                <input style="width: 300px; height: 35px;" type="submit" value="Prijavi se" class="dugme">
+            </form>
+            <br><br>
+            <h4><b><%=validacija1 %></b></h4>
+        
+        </div>
+    
+      
+        <div class="deo" style='	height: 350px;'>
+            <h1 style="color: white;">Registracija</h1>
+
+            <form action="\registracija" method="POST" style="margin-top: 30px;">
+                <input style="width: 300px; height: 35px;" type="text" name="ime" placeholder="Ime" required="required"><br><br>
+                <input style="width: 300px; height: 35px;" type="text" name="prezime" placeholder="Prezime" required="required"><br><br>
+                <input style="width: 300px; height: 35px;" type="text" name="username" placeholder="Korisnicko ime" required="required"><br><br>
+                <input style="width: 300px; height: 35px;" type="password" name="lozinka" placeholder="Lozinka" required="required"><br><br>
+                <input style="width: 300px; height: 35px;" type="submit" value="Registruj se" class="dugme">
+            </form>
+            <br><br>
+            <h4><b><%=validacija2 %></b></h4>
+            <br>
+        </div>
+   
+</body>
+</html>

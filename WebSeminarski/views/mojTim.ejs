@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolekcija</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/lirepdrcss.css"/>
+    
+</head>
+
+<body>
+    <img src="/images/Pozadina.jpg" id="slika">
+    
+    <div class="divv" style="padding-top: 12px;">
+        
+        <ul>
+            <form method="POST" action="\igraci">
+                <li><input type="submit" value="Igraci"></li>
+            </form>
+            <form method="POST" action="\mojTim">
+                <li><input type="submit" value="Moj tim" class="selektovano"></li>
+            </form>
+            <form method="POST" action="\vratiSe">
+                <li style="float: right;margin-right: 20px;"><input type="submit" value="ODJAVI SE" ></li>
+            </form>
+        </ul>
+        
+    </div>
+
+    <div class="divv" style="margin-bottom: 10px;">
+        <h4 style="color: #333;padding-bottom: 10px;"><b>Tvoj tim</b></h4>
+        <% if(igraci != ""){%>
+        <table style="width: 600px;margin: auto;margin-bottom: 15px;">
+            <tr style='border-bottom: 1px solid black;'><th style="padding: 0px 10px">Ime</th><th>Tim</th><th style="width: 90px;"></th><th style="width: 90px;"></th></tr>
+                <%
+                for (item of igraci)
+                { 
+                    %>
+                        <tr>
+
+                        <td style="font-size: 15px;"><cite><b><%=item.Ime%></b></cite></td>
+                        <td><%=item.Tim%></td>
+                        
+                        <form action="\ukloni" method="POST">
+                            <input type="hidden" value="<%=item.id%>" name="igracID">
+                            <td><input class="dugme"  type="submit" value="Ukloni" style="padding: 5px 10px;width: 80px; background-color: darkred;"></td>
+                        </form>
+                        <form action="\prikazi" method="POST">
+                            <input type="hidden" value="<%=item.id%>" name="igracID">
+                            <td><input class="dugme"  type="submit" value="Detaljnije" style="background-color: black; padding: 5px 10px;width: 100px;"></td>
+                        </form>   
+                        </tr>
+                <% }  %>
+        </table>
+        <%} else {%>
+            <p><b><%=greska %></b></p>
+        <% }%>
+    </div>
+
+</body>
+</html>

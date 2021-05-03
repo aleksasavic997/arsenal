@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igraci</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/lirepdrcss.css"/>
+    
+</head>
+
+<body>
+    <img src="/images/Pozadina.jpg" id="slika">
+   
+    <div class="divv" style="padding-top: 12px;">
+        
+        <ul>
+            <form method="POST" action="\igraci">
+                <li><input type="submit" value="Igraci" class="selektovano"></li>
+            </form>
+            <form method="POST" action="\mojTim">
+                <li><input type="submit" value="Moj tim"></li>
+            </form>
+            <form method="POST" action="\vratiSe">
+                <li style="float: right;margin-right: 20px;"><input type="submit" value="ODJAVI SE" ></li>
+            </form>
+        </ul>
+        
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="divv" style="margin-bottom: 10px;">
+        <h4 style="color: #333;padding-bottom: 10px;"><b><%=dobrodosli %></b></h4>
+        <h1 style="padding-bottom: 10px;">Victory grows through harmony</h1>
+        <br>
+    
+        <form method="POST" action="\pretraga">
+            </td><input type="text" name="search">
+            </td><input type="submit" class="dugme" value="Pretraži"><br><br>
+        </form>
+        
+
+        <table  style="width: 600px;margin: auto;margin-bottom: 15px;">
+            <tr style="border-bottom: 1px solid black;"><th style="padding: 0px 10px">Ime igraca</th><th>Tim</th></tr>
+            <% if(igraci != ""){
+                for (item of igraci)
+                { 
+                    %>
+                        <tr>
+
+                        <td style="font-size: 15px;"><cite><b><%=item.Ime%></b></cite>
+                          
+                        </td>
+                        <td><%=item.Tim%></td>
+                        
+                      
+                        <form action="\prikazi" method="POST">
+                            <input type="hidden" value="<%=item.id%>" name="igracID">
+                            <td><input class="dugme"  type="submit" value="Detaljnije" style="background-color: black; padding: 5px 10px;width: 100px;"></td>
+                        </form>   
+                        </tr>
+                   <% 
+                 } 
+            }%>
+        </table>
+    </div>
+    <div class="divv">
+        <%
+        if(igrac!="")
+        {
+        %>
+        
+        <h3>Igrac <cite>"<%=igrac[0].Ime%>"</cite> je u tvom timu!</h3>
+        
+       <% }
+         %>
+         <p><b><%=greska %></b></p>
+    </div>
+    
+</body>
+</html>

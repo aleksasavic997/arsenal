@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/lirepdrcss.css"/>
+    
+</head>
+
+<body>
+    <img src="/images/Pozadina.jpg" id="slika">
+    
+    <div class="divv" style="padding-top: 12px;">
+        
+        <ul>
+            <form method="POST" action="\adminPregled">
+                <li><input type="submit" value="Igraci"></li>
+            </form>
+            <form method="POST" action="\dodaj">
+                <li><input type="submit" value="Dodaj" class="selektovano"></li>
+            </form>
+
+            <form method="POST" action="\vratiSe">
+                <li style="float: right;margin-right: 20px;"><input type="submit" value="ODJAVI SE" ></li>
+            </form>
+        </ul>
+        
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="divv" style="margin-bottom: 10px;">
+   
+        
+        <h4 style="color: #333;padding-bottom: 10px;"><b>Victory grows through harmony</b></h4>
+        <table style="margin: auto; margin-bottom: 20px;" border="1px solid black;"><tr><td style="text-align: left; padding: 20px;">
+        <form action="\dodajIgraca" method="POST">
+            <input type="text" name="ime" placeholder="Ime i prezime"><br><br><br>
+            <textarea cols=70 rows="10" name="detalji" placeholder="Detalji o igracu"></textarea> <br><br><br>
+            <input type="text" name="tim" placeholder="Tim"> <br>
+            
+            <br>
+            <input type="submit" value="Dodaj" class="dugme">
+        </form>
+        
+        
+    </div>
+
+</body>
+</html>

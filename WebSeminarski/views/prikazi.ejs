@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igraci</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/lirepdrcss.css" />
+
+</head>
+
+<body>
+    <img src="/images/Pozadina.jpg" id="slika">
+
+    <div class="divv" style="padding-top: 12px;">
+
+        <ul>
+            <form method="POST" action="\igraci">
+                <li><input type="submit" value="Igraci" class="selektovano"></li>
+            </form>
+            <form method="POST" action="\mojTim">
+                <li><input type="submit" value="MojTim"></li>
+            </form>
+            <form method="POST" action="\vratiSe">
+                <li style="float: right;margin-right: 20px;"><input type="submit" value="ODJAVI SE"></li>
+            </form>
+        </ul>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="divv" style="margin-bottom: 10px;">
+
+
+
+        <% if(igraci !="" ){ for (item of igraci) { %>
+            <h1>
+                <%=item.Ime%>
+               
+            </h1>
+            <%=item.Tim%><br>
+            
+            
+            <div style=' text-align: justify; margin: 50px;'>
+                <h2>Detalji</h2><br>
+                <b>
+                    <%=item.Detalji%>
+                </b>
+            </div>
+
+
+            
+            
+            <form action="\sacuvaj" method="POST">
+                <input type="hidden" value="<%=item.id%>" name="igracID">
+                <td><input class="dugme"  type="submit" value="Dodaj u tim" style="padding: 5px 10px;width: 150px;"></td>
+            </form>
+            <br>
+                <% } }%>
+
+
+
+    </div>
+    <div class="divv">
+        <% if(igrac!="" ) { %>
+
+            <h3>Igrac <cite>"<%=igrac[0].Ime%>"</cite> je u tvom timu!</h3>
+
+            <% } %>
+                <p><b>
+                        <%=greska %>
+                    </b></p>
+    </div>
+
+</body>
+
+</html>
